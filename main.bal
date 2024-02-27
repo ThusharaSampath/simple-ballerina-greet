@@ -1,11 +1,11 @@
 import ballerina/io;
-import ballerina/time;
 
-configurable string shopifyAccessToken = ?;
+// configurable string shopifyAccessToken = ?;
 
-public function main() {
-    io:println("Hello, World!");
-    var currentTime = time:utcNow();
-    var formattedTime = time:utcToString(currentTime);
-    io:println("Current time: " + formattedTime);
+public function main(int value) returns error? {
+    io:println(value);
+
+    if value >= 3 {
+        return error("Input should less than 3");
+    }
 }

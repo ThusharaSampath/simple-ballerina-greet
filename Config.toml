@@ -1,0 +1,4 @@
+[container.image]
+repository="wso2inc" # Docker hub repository name.
+name="greeter" # container name
+tag="latest"
