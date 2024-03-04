@@ -13,7 +13,7 @@ import ballerina/http;
 // }
 
 
-service / on new http:Listener(8090) {
+service /hello on new http:Listener(8090) {
     resource function post .(http:Request req) returns string|error|http:Response {
         string payload = check req.getTextPayload();
         io:println("payload: " + payload);
