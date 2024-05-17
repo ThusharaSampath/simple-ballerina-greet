@@ -9,10 +9,12 @@ public function main() {
 
     // print while time in while loop for 10 secs
     var i = 0;
-    while (i < 10) {
+    while (i < 60) {
         currentTime = time:utcNow();
         formattedTime = time:utcToString(currentTime);
-        io:println("Current time: " + formattedTime);
+        if (i % 10 == 0) {
+            io:println("Current time: " + formattedTime);
+        }
         runtime:sleep(1);
         i = i + 1;
     }
