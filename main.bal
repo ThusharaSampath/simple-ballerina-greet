@@ -7,5 +7,5 @@ public function main() {
     io:println("Hello, World!");
     var currentTime = time:utcNow();
     var formattedTime = time:utcToString(currentTime);
-    io:println("Current time: " + formattedTime);
+    io:println("Current time is: " + formattedTime);
 }
