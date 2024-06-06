@@ -1,6 +1,6 @@
 import ballerina/io;
 
-configurable int configValue = ?;
+configurable int configValue = 100;
 
 public function main(int paraValue) returns error? {
     io:println("Config value: " + configValue.toString());
