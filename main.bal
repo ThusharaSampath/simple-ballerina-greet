@@ -1,11 +1,12 @@
 import ballerina/io;
 
-// configurable string shopifyAccessToken = ?;
+configurable int configValue = ?;
 
-public function main(int value) returns error? {
-    io:println(value);
+public function main(int paraValue) returns error? {
+    io:println("Config value: " + configValue.toString());
+    io:println("Para value: " + paraValue.toString());
 
-    if value >= 3 {
-        return error("Input should less than 3");
+    if paraValue < 20 {
+        return error("Input should be greater than 20");
     }
 }
