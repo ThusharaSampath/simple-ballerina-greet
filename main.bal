@@ -19,7 +19,7 @@ public function main() returns error? {
 
     // print while time in while loop for 10 secs
     var i = 0;
-    while (i < 60) {
+    while (i < 120) {
         currentTime = time:utcNow();
         formattedTime = time:utcToString(currentTime);
         if (i % 10 == 0) {
