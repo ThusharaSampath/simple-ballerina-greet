@@ -1,7 +1,7 @@
 import ballerina/io;
 import ballerina/http;
 
-// configurable string testConfig = ?;
+configurable string testConfig = ?;
 
 // service / on new http:Listener(8090) {
 //     resource function post [string path](http:Request req) returns string|error|http:Response {
