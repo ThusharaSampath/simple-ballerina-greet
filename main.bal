@@ -6,6 +6,12 @@ configurable int v = 2000;
 
 public function main() returns error? {
 
+    // simulating runtime error
+    if v > 0 {
+        io:println("Value is less than 20");
+        return error("Input should be greater than 20");
+    }
+
     if v < 1000 {
         io:println("Value is less than 1000");
         return error("Input should be greater than 20");
@@ -19,7 +25,7 @@ public function main() returns error? {
 
     // print while time in while loop for 10 secs
     var i = 0;
-    while (i < 60) {
+    while (i < 1) {
         currentTime = time:utcNow();
         formattedTime = time:utcToString(currentTime);
         if (i % 10 == 0) {
