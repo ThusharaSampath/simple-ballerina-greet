@@ -28,8 +28,13 @@ service /worlds on new http:Listener(8091) {
         io:println("payload: " + payload);
         return payload;
     }
-
     resource function get .(http:Request req) returns string|error|http:Response {
         return "Hello, World!";
+    }
+    resource function put .(http:Request req) returns string|error|http:Response
+    {
+        string payload = check req.getTextPayload();
+        io:println("PUT payload: " + payload);
+        return payload;
     }
 }
