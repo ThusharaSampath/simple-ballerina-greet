@@ -22,7 +22,7 @@ service /hello on new http:Listener(8090) {
     }
 }
 
-service /worlds on new http:Listener(8090) {
+service /worlds on new http:Listener(8091) {
     resource function post .(http:Request req) returns string|error|http:Response {
         string payload = check req.getTextPayload();
         io:println("payload: " + payload);
