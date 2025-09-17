@@ -2,35 +2,30 @@ import ballerina/io;
 import ballerina/lang.runtime;
 import ballerina/time;
 
-configurable int v = 2000;
+configurable int v = 15; // by default program will exit without error immediately
 
 public function main() returns error? {
 
     // simulating runtime error
-    if v > 0 {
-        io:println("Value is less than 20");
-        return error("Input should be greater than 20");
+    if v < 10 {
+        io:println("Value is less than 10");
+        return error("Input should be greater than 10");
     }
 
-    if v < 1000 {
-        io:println("Value is less than 1000");
-        return error("Input should be greater than 20");
-    } else {
-        io:println("Value is greater than or equal to 1000");
+    if v < 20 {
+        io:println("Value is less than 20 and greater than 10, exiting the program without error");
+        return;
     }
 
-    io:println("Hello, World! I'm starting the timer.");
+    io:println("Value is greater than 20. I'm starting the timer.");
     var currentTime = time:utcNow();
     var formattedTime = time:utcToString(currentTime);
 
-    // print while time in while loop for 10 secs
     var i = 0;
-    while (i < 1) {
+    while (i < v) {
         currentTime = time:utcNow();
         formattedTime = time:utcToString(currentTime);
-        if (i % 10 == 0) {
-            io:println("Current time: " + formattedTime);
-        }
+        io:println("Current time: " + formattedTime);
         runtime:sleep(1);
         i = i + 1;
     }
